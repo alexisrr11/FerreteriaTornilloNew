@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ferretería Tornillo</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./index.js" defer></script>
+    <script type="module" src="./chatBot/saludos.js"></script>
+    <script type="module" src="./chatBot/nombresPosibles.js"></script>
+    <script type="module" src="./chatBot/funcionesChatbot.js"></script>
+</head>
+
+<body id="inicio" class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-orange-700 text-white p-3 shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">🔩 Ferretería Tornillo</h1>
+
+            <button id="btnMenu" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Navegación -->
+            <nav id="menuNav"
+                class="hidden absolute top-14 left-0 w-full bg-lime-700 text-center space-y-2 py-4 md:space-y-0 md:space-x-4 md:static md:flex md:w-auto md:py-0 md:bg-transparent md:block">
+                <a href="#inicio" class="block md:inline hover:underline">Inicio</a>
+                <a href="#verProductos" class="block md:inline hover:underline">Productos</a>
+                <a href="#contacto" class="block md:inline hover:underline">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <a href="https://wa.me/5491137659081?text=%C2%A1Hola!%20Vi%20las%20ofertas%20y%20quiero%20consultar."
+        class="fixed bottom-4 left-4 z-50 text-3xl">
+        <i class='text-white bg-green-600 p-2 rounded-full bx bxl-whatsapp'></i>
+    </a>
+
+    <!-- NEW HERO -->
+    <section class="relative top-14 bg-cover bg-center h-[90vh]"
+        style="background-image: url('https://manuelcorripiosas.com/images/secciones/listo-ferreteria/listo-06.jpg');">
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center">
+            <div class="text-white px-4">
+                <h2 class="text-4xl md:text-6xl font-bold">Descubre todos nuestros descuentos</h2>
+                <p class="mt-4 text-lg">Ofertas exclusivas en herramientas, materiales y asesoramiento técnico para
+                    profesionales y aficionados</p>
+                <button id="openModal"
+                    class="px-8 py-3 mt-6 bg-orange-700 text-white rounded-lg shadow hover:bg-orange-800 transition">
+                    Productos en oferta
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="ofertasModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 relative overflow-hidden">
+
+            <!-- Botón cerrar -->
+            <button id="closeModal"
+                class="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold z-20">&times;</button>
+
+            <!-- Slider -->
+            <div class="relative w-full overflow-hidden">
+                <div id="slider" class="flex transition-transform duration-500">
+
+                    <!-- Oferta 1 -->
+                    <div class="min-w-full flex flex-col items-center justify-center p-6">
+                        <img src="https://d2izjnmtylvtfh.cloudfront.net/3072508-large_default/amoladora-esmeriladora-angular-4-1-2-115mm-820w-black-decker-g720n-ar.jpg"
+                            alt="Oferta 1" class="rounded-xl shadow-lg w-72 h-72 object-cover">
+                        <h2 class="text-xl font-semibold mt-4">Amoladora 115Mm 820W</h2>
+                        <p class="text-gray-600 line-through">Antes: $100.000</p>
+                        <p class="text-red-600 font-bold text-lg">Hoy: $79.000</p>
+                    </div>
+
+                    <!-- Oferta 2 -->
+                    <div class="min-w-full flex flex-col items-center justify-center p-6">
+                        <img src="https://www.staticarc.co.uk/cdn/shop/files/3_fa6bb833-1462-4106-97f1-0dd1914e9709_1200x1200.jpg?v=1702165588"
+                            alt="Oferta 2" class="rounded-xl shadow-lg w-72 h-72 object-cover">
+                        <h2 class="text-xl font-semibold mt-4">VEVOR MIG Welder 250A Gas</h2>
+                        <p class="text-gray-600 line-through">Antes: $1.100.000</p>
+                        <p class="text-red-600 font-bold text-lg">Hoy: $950.000</p>
+                    </div>
+
+                    <!-- Oferta 3 -->
+                    <div class="min-w-full flex flex-col items-center justify-center p-6">
+                        <img src="https://gtsupplies.co.za/cdn/shop/products/garage-tool-supplies-hand-tools-9-31110mr-king-tony-10pc-screwdriver-set-14867216990313_grande.png?v=1610088039"
+                            alt="Oferta 3" class="rounded-xl shadow-lg w-72 h-72 object-cover">
+                        <h2 class="text-xl font-semibold mt-4">Juego De Destornilladores 10 Pz</h2>
+                        <p class="text-gray-600 line-through">Antes: $20.000</p>
+                        <p class="text-red-600 font-bold text-lg">Hoy: $14.900</p>
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <div class="absolute inset-0 flex items-center justify-between px-4">
+                    <button id="prev"
+                        class="bg-gray-800 bg-opacity-50 text-white rounded-full p-3 hover:bg-opacity-80">❮</button>
+                    <button id="next"
+                        class="bg-gray-800 bg-opacity-50 text-white rounded-full p-3 hover:bg-opacity-80">❯</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE OFERTAS -->
+    <section id="ofertas-section" class="max-w-6xl mt-10 m-auto px-6 py-16">
+        <h3 id="titulo-ofertas" class="text-3xl font-bold text-center mb-10 text-red-600">
+            Ofertas del Día
+        </h3>
+
+        <div id="contenedor-ofertas" class="grid md:gap-8 px-6">
+            <!-- Aquí se renderizan ofertas dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="verProductos" class="py-12 container mx-auto">
+        <h2 class="text-2xl font-bold mb-8 text-center">Productos destacados</h2>
+        <div id="productos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-2">
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="bg-orange-50 py-12">
+        <div class="container mx-auto max-w-xl">
+            <h2 class="text-2xl font-bold text-center mb-8">📞 Contactanos</h2>
+            <form class="bg-white p-6 rounded shadow space-y-4" action="" id="form">
+                <input class="w-full border rounded p-2" type="text" name="name" placeholder="Nombre Completo" required>
+                <input class="w-full border rounded p-2" type="email" name="email" placeholder="Email" required>
+                <textarea class="w-full border rounded p-2" rows="4" type="mensaje" name="mensaje required"
+                    placeholder="Por favor deje su mensaje aquí..."></textarea>
+                <button class="bg-orange-700 text-white px-4 py-2 rounded hover:bg-orange-800 transition" type="submit"
+                    name="register" class="btn-sumit">Enviar</button>
+            </form>
+            <a class="hidden" href="mailto:alexis.r4995@gmail.com" id="mailto">mail</a>
+        </div>
+    </section>
+
+    <div class="fixed bottom-4 right-4">
+        <button id="botonChat" class="bg-orange-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-orange-500">
+            💬 Chat
+        </button>
+        <div id="chatBox" class="hidden bg-white w-80 p-4 rounded shadow-lg mt-2">
+            <div class="h-48 overflow-y-auto mb-2 border p-2 text-sm" id="mensajes">Hola, ¿en qué puedo ayudarte?</div>
+            <input id="inputMensaje" type="text" placeholder="Escribí tu pregunta..."
+                class="border w-full p-2 rounded text-sm">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-orange-700 text-white text-center py-4">
+        <p>&copy; 2025 Ferretería Tornillo. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal-ofertas" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg max-w-md w-full p-6 relative">
+            <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-xl">
+                &times;
+            </button>
+            <!-- CONTENIDO DEL MODAL -->
+            <h2 class="text-2xl font-bold text-center text-red-600 mb-4">🔥 Ofertas del Día 🔥</h2>
+            <ul id="lista-ofertas" class="space-y-3 text-gray-700">
+                <!-- Aquí se renderizan ofertas dinámicamente -->
+            </ul>
+            <div class="text-center mt-6">
+                <a href="https://wa.me/5491137659081?text=%C2%A1Hola!%20Vi%20las%20ofertas%20y%20quiero%20consultar."
+                    target="_blank" id="botonConsultaWhatsapp"
+                    class="bg-lime-700 text-white px-6 py-2 rounded-lg hover:bg-lime-800">
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //Close
+        function closeModal() {
+            document.getElementById("modal-ofertas").classList.add("hidden");
+        }
+    </script>
+
+</body>
+
+</html>
