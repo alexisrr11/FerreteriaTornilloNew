@@ -128,12 +128,12 @@ window.onload = function () {
 
   // Array de ofertas por día
   const ofertasPorDia = {
-    1: ["👖 Lunes: 20% OFF en Pantalones", "👕 Descuento en Remeras y Buzos con Visa"],
-    2: ["🧥 Martes: 2x1 en Camperas", " Mercado pago 15% de Descuento"],
-    3: ["👗 Miércoles: 25% OFF Vestidos elegantes", "Santander Río 10% sin interes"],
-    4: ["👔 Jueves: Camisas caballeros al 30% efectivo", "Tarjetas Visa 15% descuento sin interes"],
-    5: ["👙 Viernes: Mayas y Biquinis descuentos 2x1", "Caballeros 20% ropa verano promo exclusiva"],
-    6: ["🩴 Sábado: Accesorios de playa 10% Efectivo", "🕶️ Accesorios Descuento con Debito Visa 5% sin recargo"]
+    1: ["🔨 Lunes: 20% OFF en Martillos", "💳 Descuento en destornilladores con Visa"],
+    2: ["🔧 Martes: 2x1 en Llaves Francesas", "📲 Mercado Pago 15% de Descuento en herramientas manuales"],
+    3: ["🪚 Miércoles: 25% OFF en Sierras", "🏦 Santander Río 10% sin interés en combos de ferretería"],
+    4: ["⚙️ Jueves: Taladros eléctricos al 30% efectivo", "💳 Tarjetas Visa 15% descuento sin interés en accesorios"],
+    5: ["🪛 Viernes: Juegos de destornilladores 2x1", "🧰 20% OFF en cajas de herramientas promo exclusiva"],
+    6: ["⛓️ Sábado: Cadenas y candados 10% en efectivo", "🔦 Linternas con débito Visa 5% sin recargo"]
     // Domingo sin ofertas
   };
 
@@ -194,4 +194,5 @@ window.onload = function () {
       contenedor.appendChild(msg);
     }
   }
+
 };
